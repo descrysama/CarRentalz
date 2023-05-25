@@ -1,8 +1,12 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using CarRentalz.Datas.Repository;
 using CarRentalz.Datas.Repository.Contract;
+using CarRentalz.Business.Service;
+using CarRentalz.Business.Service.Contract;
+using CarRentalz.Datas.CarRentalzDbContextNameSpace;
 
 namespace CarRentalz.Application.IoC
 {
@@ -41,9 +45,9 @@ namespace CarRentalz.Application.IoC
             // Injections des Dépendances
             // - Service
 
-            //services.AddScoped<IServiceDepartement, ServiceDepartement>();
+            services.AddScoped<IUserService, UserService>();
 
-            //return services;
+            return services;
         }
 
         /// <summary>
@@ -54,12 +58,12 @@ namespace CarRentalz.Application.IoC
         {
             var connectionString = configuration.GetConnectionString("BddConnection");
 
-            //services.AddDbContext<IMeteoContext, MeteoDBContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))
-            //    .LogTo(Console.WriteLine, LogLevel.Information)
-            //    .EnableSensitiveDataLogging()
-            //    .EnableDetailedErrors());
+            services.AddDbContext<CarRentalzDbContext>(options => options.UseMySQL(connectionString)
+                .LogTo(Console.WriteLine, LogLevel.Information)
+                .EnableSensitiveDataLogging()
+                .EnableDetailedErrors());
 
-            //return services;
+            return services;
         }
 
     }

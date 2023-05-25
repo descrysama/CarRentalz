@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -9,5 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CarRentalz.Datas.Repository.Contract\CarRentalz.Datas.Repository.Contract.csproj" />
+    <ProjectReference Include="..\CarRentalz.Business.Dto\CarRentalz.Business.Dto.csproj" />
+    <ProjectReference Include="..\CarRentalz.Business.Service.Contract\CarRentalz.Business.Service.Contract.csproj" />
   </ItemGroup>
 </Project>

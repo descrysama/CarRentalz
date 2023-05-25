@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -11,9 +11,13 @@
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+    <PackageReference Include="MySqlConnector" Version="2.2.6" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CarRentalz.Datas.Repository.Contract\CarRentalz.Datas.Repository.Contract.csproj" />
     <ProjectReference Include="..\CarRentalz.Datas.Repository\CarRentalz.Datas.Repository.csproj" />
+    <ProjectReference Include="..\CarRentalz.Business.Service\CarRentalz.Business.Service.csproj" />
+    <ProjectReference Include="..\CarRentalz.Datas.DbContext\CarRentalz.Datas.DbContext.csproj" />
   </ItemGroup>
 </Project>

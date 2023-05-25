@@ -5,7 +5,7 @@ using CarRentalz.Datas.Entities;
 
 namespace CarRentalz.Datas.CarRentalzDbContextNameSpace;
 
-public partial class CarRentalzDbContext : DbContext
+public partial class CarRentalzDbContext : DbContext, IDisposable
 {
     public CarRentalzDbContext()
     {
@@ -45,9 +45,6 @@ public partial class CarRentalzDbContext : DbContext
     public virtual DbSet<UserRating> UserRatings { get; set; }
 
     public virtual DbSet<Verification> Verifications { get; set; }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseMySQL("Server=localhost;Database=carrentalz;Port=8889;User Id=root;Password=root;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

@@ -7,15 +7,11 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="User\" />
-    <None Remove="Mapper\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="User\" />
-    <Folder Include="Mapper\" />
-  </ItemGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\CarRentalz.Datas.Entities\CarRentalz.Datas.Entities.csproj" />
+    <ProjectReference Include="..\CarRentalz.Business.Dto\CarRentalz.Business.Dto.csproj" />
   </ItemGroup>
 </Project>
