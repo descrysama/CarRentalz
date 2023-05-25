@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CarRentalz.Datas.Entities\CarRentalz.Datas.Entities.csproj" />
+    <ProjectReference Include="..\CarRentalz.Datas.DbContext\CarRentalz.Datas.DbContext.csproj" />
+  </ItemGroup>
 </Project>
