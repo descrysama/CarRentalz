@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using CarRentalz.Datas.Repository;
+using CarRentalz.Datas.Repository.Contract;
 
 namespace CarRentalz.Application.IoC
 {
@@ -8,13 +10,24 @@ namespace CarRentalz.Application.IoC
     {
         public static IServiceCollection ConfigureInjectionDependencyRepository(this IServiceCollection services)
         {
-            // Injections des Dépendances
-            // - Repositories
+            services.AddScoped<IVerificationRepository, VerificationRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserRatingRepository, UserRatingRepository>();
+            services.AddScoped<ITypeEnumRepository, TypeEnumRepository>();
+            services.AddScoped<IRentRepository, RentRepository>();
+            services.AddScoped<INotificationRepository, NotificationRepository>();
+            services.AddScoped<IGearboxEnumRepository, GearboxEnumRepository>();
+            services.AddScoped<IFuelEnumRepository, FuelEnumRepository>();
+            services.AddScoped<ICarRepository, CarRepository>();
+            services.AddScoped<ICarSettingRepository, CarSettingRepository>();
+            services.AddScoped<ICarRatingRepository, CarRatingRepository>();
+            services.AddScoped<IBrandRepository, BrandRepository>();
+            services.AddScoped<IAgencyRepository, AgencyRepository>();
+            services.AddScoped<IAdminRepository, AdminRepository>();
+            services.AddScoped<IAdminGradeRepository, AdminGradeRepository>();
 
-            //services.AddScoped<IRepositoryDepartement, RepositoryDepartement>();
+            return services;
 
-
-            //return services;
         }
 
 
